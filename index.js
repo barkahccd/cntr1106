@@ -4008,11 +4008,10 @@ async function sendTelegramSummary() {
         lines.push(`💼 *Balance Token*`);
         lines.push(`  ├ CC     : ${(a.cc || 0).toFixed(2)}`);
         lines.push(`  ├ USDCx  : ${(a.usdcx || 0).toFixed(4)}`);
-        lines.push(`  ├ cETH   : ${(a.ceth || 0).toFixed(6)}`);
-        lines.push(`  └ cBTC   : 0`);
+        lines.push(`  └ cETH   : ${(a.ceth || 0).toFixed(6)}`);
         lines.push(`📈 *Statistik*`);
-        lines.push(`  ├ Total Swap  : ${a.totalSwaps || 0} tx`);
-        lines.push(`  ├ Reward      : ${(a.monthReward || 0).toFixed(2)} CC`);
+        lines.push(`  ├ Total Swap      : ${a.totalSwaps || 0} tx`);
+        lines.push(`  ├ Reward Bulanan  : ${(a.monthReward || 0).toFixed(2)} CC`);
         lines.push(`  └ Δ Reward Start  : ${deltaStr} CC 🎁`);
 
         totCC      += a.cc || 0;
@@ -4025,7 +4024,7 @@ async function sendTelegramSummary() {
     // Footer total
     lines.push(`\n${SEP2}`);
     lines.push(`Total Swap   : ${totSwaps}`);
-    lines.push(`Total Reward : ${totReward.toFixed(4)} rCC`);
+    lines.push(`Total Reward : ${totReward.toFixed(4)} CC`);
 
     const msg = lines.join('\n');
 
